@@ -44,7 +44,7 @@ $(DIST)/gobgp:
 $(DIST)/calico-bgp-daemon: $(SRC_FILES) vendor
 	mkdir -p $(@D)
 	go build -v -o $(DIST)/calico-bgp-daemon \
-	-ldflags "-X main.VERSION=$(GOBGPD_VERSION) -s -w" main.go ipam.go k8s.go
+	-ldflags "-X main.VERSION=$(GOBGPD_VERSION) -s -w" main.go ipam.go
 
 build-containerized: clean vendor $(DIST)/gobgp
 	mkdir -p $(DIST)
